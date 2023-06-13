@@ -3,7 +3,32 @@ const MenuModel = require('../models/menu.model');
 const MenuRoute = require('express').Router();
 
 //Create (using http post)
-
+MenuRoute.post('/', async (req, res) => {
+    try {
+      const { name, description, price, image, category } = req.body;
+  
+      // Validate the required fields
+      if (!name || !description || !price || !image || !category) {
+        return res.status(400).json({ message: 'Missing required fields' });
+      }
+  
+      const newItem = {
+        name,
+        description,
+        price,
+        image,
+        category,
+        quantity: 0
+      };
+  
+      const createdItem = await MenuModel.CreateItem(newItem);
+  
+      res.status(201).json(createdItem);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
 //Read (using http get)
 MenuRoute.get('/', async (req, res) => {
     try {

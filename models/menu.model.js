@@ -14,7 +14,7 @@ class MenuModel {
     //הוספה 
     static async AddMenuItem(newItem) {
         try {
-          const result = await new DB().Insert('Menu', newItem);
+          const result = await new DB().Insert('menu', newItem);
           return result;
         } catch (error) {
           console.error('Error adding menu item:', error);
@@ -25,7 +25,7 @@ class MenuModel {
     //עריכה
     static async EditMenuItem(itemId, updatedData) {
         try {
-          const result = await new DB().Update('Menu', { _id: itemId }, updatedData);
+          const result = await new DB().Update('menu', { _id: itemId }, updatedData);
           return result;
         } catch (error) {
           console.error('Error editing menu item:', error);
@@ -35,22 +35,22 @@ class MenuModel {
       
     //מחיקה
      static async DeleteMenuItem(itemId) {
-        return await new DB().Delete('Menu', { _id: itemId });
+        return await new DB().Delete('menu', { _id: itemId });
       }
       
     //שליפה
     static async GetAllItems() {
         console.log(2);
-        return await new DB().FindAll('Menu');
+        return await new DB().FindAll('menu');
     }
 
     static async FindByPrice(max_price) {
         let query = { price: { $lte: max_price } };
-        return await new DB().FindAll('Menu', query);
+        return await new DB().FindAll('menu', query);
     }
 
     static async UpdateItemPrice(id, doc) {
-        return await new DB().UpdateById('Menu', id, doc);
+        return await new DB().UpdateById('menu', id, doc);
     }
 
 
