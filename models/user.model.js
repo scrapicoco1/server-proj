@@ -27,7 +27,43 @@ class UserModel {
     }
 
     //עריכה
+    static async Add(collectionName, document) {
+        try {
+          const db = new DB();
+          const result = await db.InsertOne(collectionName, document);
+      
+          if (result.insertedCount === 1) {
+            console.log('Document added successfully');
+            return result.insertedId;
+          } else {
+            console.log('Failed to add document');
+            return null;
+          }
+        } catch (error) {
+          console.error('Error occurred during add:', error);
+          throw error;
+        }
+      }
+      
     //מחיקה
+    static async Edit(collectionName, query, update) {
+        try {
+          const db = new DB();
+          const result = await db.UpdateOne(collectionName, query, update);
+      
+          if (result.modifiedCount > 0) {
+            console.log('Document updated successfully');
+            return result;
+          } else {
+            console.log('No document found matching the query');
+            return null;
+          }
+        } catch (error) {
+          console.error('Error occurred during edit:', error);
+          throw error;
+        }
+      }
+      
     //שליפה
     static async Login(email, password) {
         let query = { email: email }

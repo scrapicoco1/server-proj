@@ -12,8 +12,32 @@ class MenuModel {
     //פעולות נוספות
 
     //הוספה 
+    static async AddMenuItem(newItem) {
+        try {
+          const result = await new DB().Insert('Menu', newItem);
+          return result;
+        } catch (error) {
+          console.error('Error adding menu item:', error);
+          throw error;
+        }
+      }
+      
     //עריכה
+    static async EditMenuItem(itemId, updatedData) {
+        try {
+          const result = await new DB().Update('Menu', { _id: itemId }, updatedData);
+          return result;
+        } catch (error) {
+          console.error('Error editing menu item:', error);
+          throw error;
+        }
+      }
+      
     //מחיקה
+     static async DeleteMenuItem(itemId) {
+        return await new DB().Delete('Menu', { _id: itemId });
+      }
+      
     //שליפה
     static async GetAllItems() {
         console.log(2);

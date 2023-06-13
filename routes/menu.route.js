@@ -42,6 +42,22 @@ MenuRoute.put('/:id', async (req, res) => {
 
 
 //Delete (using http delete)
+MenuRoute.delete('/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      const result = await MenuModel.DeleteItem(id);
+  
+      if (result.deletedCount === 0) {
+        return res.status(404).json({ message: 'Menu item not found' });
+      }
+  
+      res.status(200).json({ message: 'Menu item deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
 
 
 
