@@ -19,10 +19,20 @@ class UserModel {
     //פעולות נוספות
 
     //הוספה 
-    static async Register(username, email, password) {
-        this.username = username;
+    static async Register(email, password, visaDetails, cardNumber, idCard, cardHolderName, expiryDate, cvv ) {        
+        let query = { email: email }
+        let user = await new DB().FindOne("Users", query);
+        if (user && user.email)
+            return {message:'Email Already Exists!'};
+
         this.email = email;
         this.password = await bcrypt.hash(password, 10);
+        this.visaDetails = visaDetails
+        this.cardNumber = cardNumber
+        this.idCard = idCard
+        this.cardHolderName = cardHolderName 
+        this.expiryDate = expiryDate
+        this.cvv = cvv 
         return await new DB().Insert('Users', { ...this });
     }
 

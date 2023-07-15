@@ -3,8 +3,8 @@ const UsersRoutes = require('express').Router();
 
 UsersRoutes.post('/register', async (req, res) => {
     try {
-        let { username, email, password } = req.body;
-        let newUser = await UserModel.Register(username, email, password);
+        let { email, password, visaDetails, cardNumber, idCard, cardHolderName, expiryDate, cvv  } = req.body;
+        let newUser = await UserModel.Register(email, password, visaDetails, cardNumber, idCard, cardHolderName, expiryDate, cvv );
         res.status(201).json(newUser);
     } catch (error) {
         res.status(500).json({ error });
