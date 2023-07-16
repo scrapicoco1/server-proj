@@ -14,11 +14,11 @@ UsersRoutes.post('/register', async (req, res) => {
 UsersRoutes.post('/login', async (req, res) => {
     try {
         let { email, password } = req.body;
-        let user = await UserModel.Login(email, password);
-        if (!user) // if(user == null || user == undefined)
-            res.status(401).json({ msg: "incorrect details" });
+        let result = await UserModel.Login(email, password);
+        if (!result) // if(user == null || user == undefined)
+            res.status(401).json({ msg: "Incorrect login details" });
         else
-            res.status(200).json(user);
+            res.status(200).json(result);
     } catch (error) {
         res.status(500).json({ error });
     }

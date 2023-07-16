@@ -20,12 +20,12 @@ class UserModel {
 
     //הוספה 
     static async Register(email, password, visaDetails, cardNumber, idCard, cardHolderName, expiryDate, cvv ) {        
-        let query = { email: email }
+        let query = { email: email.toLowerCase() }
         let user = await new DB().FindOne("Users", query);
         if (user && user.email)
             return {message:'Email Already Exists!'};
 
-        this.email = email;
+        this.email = email.toLowerCase();
         this.password = await bcrypt.hash(password, 10);
         this.visaDetails = visaDetails
         this.cardNumber = cardNumber
@@ -76,15 +76,17 @@ class UserModel {
       
     //שליפה
     static async Login(email, password) {
-        let query = { email: email }
+        let query = { email: email.toLowerCase() }
         let user = await new DB().FindOne("Users", query);
         if (!user || !(await bcrypt.compare(password, user.password)))
             return null;
 
         return {
-            _id: user._id,
-            username: user.username,
-            email: user.email
+            acknowledged:true,
+            user: {
+              _id: user._id,
+              email: user.email
+            }
         };
     }
 
