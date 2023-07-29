@@ -1,0 +1,192 @@
+[
+    {
+      "id": 1,
+      "name": "Garlic Parmesan Wings",
+      "description": "Crispy chicken wings tossed in garlic parmesan sauce.",
+      "price": 9.99,
+      "image": "items/garlicParmesanWings.jpg",
+      "category": "Starter",
+      "quantity": 0
+    },
+    {
+      "id": 2,
+      "name": "Caprese Skewers",
+      "description": "Skewers with fresh mozzarella, cherry tomatoes, and basil drizzled with balsamic glaze.",
+      "price": 8.99,
+      "image": "items/capreseSkewers.jpg",
+      "category": "Starter",
+      "quantity": 0
+    },
+    {
+      "id": 3,
+      "name": "Spinach Dip",
+      "description": "Creamy spinach dip served with tortilla chips.",
+      "price": 7.99,
+      "image": "items/spinachDip.jpg",
+      "category": "Starter",
+      "quantity": 0
+    },
+    {
+      "id": 4,
+      "name": "Mozzarella Sticks",
+      "description": "Breaded and fried mozzarella cheese sticks served with marinara sauce.",
+      "price": 6.99,
+      "image": "items/mozzarellaSticks.jpg",
+      "category": "Starter",
+      "quantity": 0
+    },
+    {
+      "id": 5,
+      "name": "Loaded Potato Skins",
+      "description": "Crispy potato skins filled with bacon, cheese, and sour cream.",
+      "price": 8.99,
+      "image": "items/potatoSkins.jpg",
+      "category": "Starter",
+      "quantity": 0
+    },
+    {
+      "id": 6,
+      "name": "Caesar Salad",
+      "description": "Crisp romaine lettuce tossed with creamy Caesar dressing, Parmesan cheese, and croutons.",
+      "price": 8.99,
+      "image": "items/caesarSalad.jpg",
+      "category": "Starter",
+      "quantity": 0
+    },
+    {
+      "id": 7,
+      "name": "Spaghetti Bolognese",
+      "description": "Classic Italian pasta dish with a rich and savory meat sauce.",
+      "price": 12.99,
+      "image": "items/spaghettiBolognese.jpg",
+      "category": "Main Course",
+      "quantity": 0
+    },
+    {
+      "id": 8,
+      "name": "Margherita Pizza",
+      "description": "Traditional pizza topped with fresh tomatoes, mozzarella cheese, and basil.",
+      "price": 10.99,
+      "image": "items/margheritaPizza.jpg",
+      "category": "Main Course",
+      "quantity": 0
+    },
+    {
+      "id": 9,
+      "name": "Pepperoni Pizza",
+      "description": "Classic pizza topped with pepperoni slices and melted cheese.",
+      "price": 11.99,
+      "image": "items/pepperoniPizza.jpg",
+      "category": "Main Course",
+      "quantity": 0
+    },
+    {
+      "id": 10,
+      "name": "Chicken Alfredo",
+      "description": "Creamy Alfredo sauce with grilled chicken served over pasta.",
+      "price": 12.99,
+      "image": "items/chickenAlfredo.jpg",
+      "category": "Main Course",
+      "quantity": 0
+    },
+    {
+      "id": 11,
+      "name": "Beef Burger",
+      "description": "Juicy beef patty topped with cheese, lettuce, tomato, and onions.",
+      "price": 9.99,
+      "image": "items/beefBurger.jpg",
+      "category": "Main Course",
+      "quantity": 0
+    },
+    {
+      "id": 12,
+      "name": "Chicken Parmesan",
+      "description": "Breaded chicken cutlet topped with marinara sauce and melted cheese.",
+      "price": 13.99,
+      "image": "items/chickenParmesan.jpg",
+      "category": "Main Course",
+      "quantity": 0
+    },
+    {
+      "id": 13,
+      "name": "Chocolate Cake",
+      "description": "Decadent chocolate cake with a rich and creamy frosting.",
+      "price": 6.99,
+      "image": "items/chocolateCake.jpg",
+      "category": "Dessert",
+      "quantity": 0
+    },
+    {
+      "id": 14,
+      "name": "Cheesecake",
+      "description": "Creamy and smooth cheesecake with a buttery graham cracker crust.",
+      "price": 7.99,
+      "image": "items/cheesecake.jpg",
+      "category": "Dessert",
+      "quantity": 0
+    },
+    {
+      "id": 15,
+      "name": "Tiramisu",
+      "description": "Classic Italian dessert made with layers of espresso-soaked ladyfingers and mascarpone cream.",
+      "price": 8.99,
+      "image": "items/tiramisu.jpg",
+      "category": "Dessert",
+      "quantity": 0
+    },
+    {
+      "id": 16,
+      "name": "Molten Lava Cake",
+      "description": "Warm and gooey chocolate cake with a melted chocolate center.",
+      "price": 9.99,
+      "image": "items/moltenLavaCake.jpg",
+      "category": "Dessert",
+      "quantity": 0
+    },
+    {
+      "id": 17,
+      "name": "Ice Cream Sundae",
+      "description": "Classic dessert with scoops of ice cream, toppings, and a cherry on top.",
+      "price": 5.99,
+      "image": "items/iceCreamSundae.jpg",
+      "category": "Dessert",
+      "quantity": 0
+    },
+    {
+      "id": 18,
+      "name": "Pina Colada",
+      "description": "Tropical cocktail made with rum, pineapple juice, and coconut cream.",
+      "price": 8.99,
+      "image": "items/pinaColada.jpg",
+      "category": "Drink",
+      "quantity": 0
+    },
+    {
+      "id": 19,
+      "name": "Margarita",
+      "description": "Classic cocktail made with tequila, lime juice, and triple sec.",
+      "price": 9.99,
+      "image": "items/Margarita.jpg",
+      "category": "Drink",
+      "quantity": 0
+    },
+    {
+      "id": 20,
+      "name": "Martini",
+      "description": "Elegant cocktail made with gin and vermouth, garnished with an olive or lemon twist.",
+      "price": 10.99,
+      "image": "items/Martini.jpg",
+      "category": "Drink",
+      "quantity": 0
+    },
+    {
+      "id": 21,
+      "name": "Mojito",
+      "description": "Refreshing cocktail made with rum, lime juice, mint leaves, and soda water.",
+      "price": 7.99,
+      "image": "items/Mojito.jpg",
+      "category": "Drink",
+      "quantity": 0
+    }
+  ]
+  
