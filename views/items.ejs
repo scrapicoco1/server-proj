@@ -97,7 +97,6 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">#id</th>
                                                     <th scope="col">Item Name</th>
                                                     <th scope="col">Description</th>
                                                     <th scope="col">Price</th>
@@ -108,12 +107,11 @@
                                             <tbody>
                                                 <% for(let i in totalItems ){%>
                                                 <tr>
-                                                    <th scope="row"><%= totalItems[i].id %></th>
                                                     <th ><%= totalItems[i].name %></th>
                                                     <td><%= totalItems[i].description %></td>
                                                     <td><%= totalItems[i].price %></td>
                                                     <td><%= totalItems[i].category %></td>
-                                                    <td><a href="/admin/edit-item/<%= totalItems[i].id %>">Edit</a> | <a href="/admin/delete-item/<%= totalItems[i]._id %>">Delete</a></td>
+                                                    <td><a href="/admin/edit-item/<%= totalItems[i]._id %>">Edit</a> | <a href="/admin/delete-item/<%= totalItems[i]._id %>">Delete</a></td>
                                                 </tr>
                                                 <% } %> 
                                             </tbody>

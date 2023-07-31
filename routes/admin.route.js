@@ -161,7 +161,7 @@ router.post('/new-item', authMiddleware, upload.single('image'), async (req, res
         if (req.file && req.file.filename)
             data = { ...data, image: 'items/' + req.file.filename };
         data = { ...data, id: await new DB().GetNextId('menu') }
-        await MenuModel.AddMenuItem({ ...data })
+        await MenuModel.AddMenuItem({ ...data, price: data.price ? parseFloat(data.price) : data.price, quantity: data.quantity ? parseFloat(data.quantity) : data.quantity })
         res.redirect('/admin/items');
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -176,7 +176,7 @@ router.post('/item/:id', authMiddleware, upload.single('image'), async (req, res
             delete data.image;
         if (req.file && req.file.filename)
             data = { ...data, image: 'items/' + req.file.filename };
-        await MenuModel.UpdateItemById(parseInt(req.params.id), { ...data });
+        await MenuModel.UpdateItemById(req.params.id, { ...data, price: data.price ? parseFloat(data.price) : data.price, quantity: data.quantity ? parseFloat(data.quantity) : data.quantity });
         res.redirect('/admin/items');
     } catch (error) {
         res.status(500).json({ error: error.message });

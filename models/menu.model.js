@@ -1,5 +1,5 @@
+const { ObjectId } = require('mongodb');
 const DB = require('../utils/db');
-
 
 class MenuModel {
   name;
@@ -73,13 +73,13 @@ class MenuModel {
   }
 
   static async FindById(id) {
-    let query = { "id": parseInt(id) };
+    let query = { "_id": new ObjectId(id) };
     // console.log('Query', query);
     return await new DB().FindOne('menu', query);
   }
 
   static async UpdateItem(id) {
-    let query = { "id": parseInt(id) };
+    let query = { "_id": new ObjectId(id) };
     // console.log('Query', query);
     return await new DB().FindOne('menu', query);
   }
@@ -93,7 +93,7 @@ class MenuModel {
     // console.log(doc,id,'<<< doc')
     delete data._id;
     delete data.id;
-    return await new DB().UpdateOne('menu', { id: parseInt(id) }, { ...data });
+    return await new DB().UpdateOne('menu', { _id: new ObjectId(id) }, { ...data });
   }
 
 }
